@@ -1,137 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5 Tags Demo - Complete Version</title>
-    <style>
+    <title>Лабораторна робота</title>
+	 <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header, footer, nav, main, section, article, aside, figure, details, dialog, canvas, audio, video, embed, output, datalist, picture, .text-container {
-            width: 90%;
-            margin: 40px 0;
-            padding: 15px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 10px auto;
-        }
-
-        h1, h2, h3 {
-            color: #333;
-        }
-
-        iframe {
-            width: 560px;
-            height: 315px;
-            border: none;
+            background-color: #f5e8d0;
         }
     </style>
 </head>
+
 <body>
+
     <header>
-        <h1>HTML5 Tags Demonstration</h1>
+        <h1>Лабораторна робота: Використання HTML5 тегів</h1>
     </header>
+
     <nav>
-        <a href="#main">Go to Main Content</a>
+        <ul>
+            <li><a href="#main">Головна</a></li>
+            <li><a href="#footer">Контакти</a></li>
+        </ul>
     </nav>
+
     <main id="main">
         <article>
-            <h2>Article Example</h2>
-            <p>This is an example of an article element.</p>
+            <h2>HTML5 теги в дії</h2>
+            <p>Ось приклади використання різних тегів.</p>
         </article>
+		<p>Ось приклад тексту з <bdi>право-наліво</bdi> форматування.</p>
         <aside>
-            <p>Additional information aside from the main content.</p>
+            <p>Бічний контент, який може містити додаткову інформацію або рекламу.</p>
         </aside>
-        <section>
-            <h3>Section Example</h3>
-            <p>This is a logical grouping within the main content.</p>
-        </section>
-        <figure>
-            <img src="IMAGE.jpg" alt="Image">
-            <figcaption>Caption describing the image content.</figcaption>
-        </figure>
-        <mark>Highlighted text to emphasize importance.</mark>
-        <time datetime="2025-04-03">April 3, 2025</time>
-        <progress value="50" max="100">50%</progress>
-        <meter value="0.7">70%</meter>
-        <details>
-            <summary>Click for More Details</summary>
-            <p>This content provides additional information hidden by default.</p>
-        </details>
-
-        <button id="openDialogBtn">Open Dialog</button>
-        
-        <dialog id="exampleDialog">
-            <p>This is a sample dialog box.</p>
-            <button id="closeDialogBtn">Close Dialog</button>
-        </dialog>
-
-        <output>Calculation Result: 42</output>
-        <datalist id="options">
-            <option value="Option 1"></option>
-            <option value="Option 2"></option>
-        </datalist>
-        <canvas id="myCanvas" width="200" height="100" style="background: #eee;"></canvas>
-
-        <audio controls>
-            <source src="audio.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
 
         <section>
-            <h3>Embedded YouTube Video</h3>
-		<iframe 
-		src="https://www.youtube.com/embed/edQq8T_KDhY" 
-		title="YouTube video player" 
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-		allowfullscreen>
-		</iframe>
+            <h3>Мультимедійний контент</h3>
+            <audio controls>
+                <source src="audio.mp3" type="audio/mp3">
+                Ваш браузер не підтримує аудіо.
+            </audio>
+
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                <track src="subtitles.vtt" kind="subtitles" srclang="uk" label="Українська">
+                Ваш браузер не підтримує відео.
+            </video>
+
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;"></canvas>
+
+			<script>
+				let canvas = document.getElementById("myCanvas");
+				let ctx = canvas.getContext("2d");
+
+				ctx.fillStyle = "blue";
+				ctx.fillRect(20, 20, 100, 50);
+			</script>
+
+            <figure>
+                <img src="image.jpg" alt="Приклад зображення">
+                <figcaption>Підпис до зображення</figcaption>
+            </figure>
+
+            <picture>
+                <source srcset="images2.jpg" media="(min-width: 800px)">
+                <source srcset="images1.jpg" media="(max-width: 799px)">
+                <img src="images1.jpg" alt="Зображення">
+            </picture>
         </section>
-        <embed src="HELLO.pdf" type="application/pdf">
-        <template id="template">
-            <p>This is reusable template content.</p>
-        </template>
-        <div class="text-container">
-            <p>Sample Text: "Hello, World!"</p>
-            <img src="images1.jpg" alt="Responsive Image">
-        </div>
-        <picture>
-            <source media="(min-width: 650px)" srcset="images2.jpg">
-            <img src="images.jpg" alt="Responsive Image">
-        </picture>
+
+        <section>
+            <h3>Інтерактивні елементи</h3>
+            <details>
+                <summary>Детальна інформація</summary>
+                <p>Додатковий текст, який можна приховати або показати.</p>
+            </details>
+
+            <dialog open>
+                <p>Це діалогове вікно.</p>
+            </dialog>
+
+            <progress value="70" max="100"></progress>
+            <meter value="40" min="0" max="100"></meter>
+
+            <form>
+                <label for="data">Оберіть значення:</label>
+                <input list="options" id="data" name="data">
+                <datalist id="options">
+                    <option value="HTML">
+                    <option value="CSS">
+                    <option value="JavaScript">
+                </datalist>
+
+                <output>Результат обчислення: 42</output>
+            </form>
+        </section>
+
+        <section>
+            <h3>Інші корисні теги</h3>
+            <p><mark>Виділений текст</mark></p>
+            <p>Час: <time datetime="2025-04-15T21:41">15 квітня 2025</time></p>
+            <p>Можливий розрив рядка<wbr> тут.</p>
+
+            <template>
+                <p>Це шаблонний контент, який можна використати через JavaScript.</p>
+            </template>
+			<embed src="pdf.pdf" type="application/pdf" width="600" height="400">
+        </section>
+		
+        <section>
+		<menu>
+            <h3>Menu Example</h3>
+            <menuitem label="Refresh Page" onclick="location.reload()">Оновити</menuitem>
+            <menuitem label="Help" onclick="alert('Допомагаю!')">Допомога</menuitem>
+            <menuitem label="Exit" onclick="alert('Вихід...')">Вийти</menuitem>
+        </menu>
+        </section>
+        <footer id="footer">
+            <p>&copy; 2025 Лабораторна робота</p>
+        </footer>
+
     </main>
-    <footer>
-        <p>Footer content with additional navigation or copyright information.</p>
-    </footer>
 
-    <script>
-        const dialog = document.getElementById('exampleDialog');
-        const openDialogBtn = document.getElementById('openDialogBtn');
-        const closeDialogBtn = document.getElementById('closeDialogBtn');
-
-        openDialogBtn.addEventListener('click', () => {
-            dialog.showModal();
-        });
-
-        closeDialogBtn.addEventListener('click', () => {
-            dialog.close();
-        });
-    </script>
 </body>
 </html>
